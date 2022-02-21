@@ -1,29 +1,14 @@
 
 class Solution {
 public:
-    int searchInsert(vector<int>& nums, int target) {
-        
-        int low = 0;
-        int high = nums.size()-1;
-        int mid;
-        while(low <= high)
+    vector<int> sortedSquares(vector<int>& nums) {
+        int i;
+        for(i=0;i<nums.size();i++)
         {
-            mid = low + (high-low)/2;
-             
-             if(nums[mid] == target)
-                   {
-                       return mid;
-                   }
-             else if(nums[mid] < target)
-                   {
-                       low = mid +1;
-                   }
-             else
-                {
-                     high = mid - 1;          
-                }
-           
+            nums[i] *= nums[i];
         }
-         return low;
+        
+        sort(nums.begin(),nums.end());
+        return nums;
     }
 };
