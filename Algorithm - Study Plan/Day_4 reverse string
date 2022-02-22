@@ -1,0 +1,54 @@
+1st methord
+
+
+class Solution {
+public:
+    void reverseString(vector<char>& s) {
+        int i;
+        int temp;
+        int n = s.size();
+        for(i=0;i<n/2;i++)
+        {
+            temp = s[i];
+            s[i] = s[n-i-1];
+            s[n-i-1] = temp;
+            
+        }
+         for(i=0;i<n;i++)
+         {
+             cout << s[i] << " " ;
+         }
+        
+    }
+};
+
+
+*******************************************************************************************************************************************
+2nd methord
+
+
+class Solution {
+public:
+    void reverseString(vector<char>& s) {
+     
+        int n = s.size(); 
+        int i;
+        int right = n-1;
+        int left = 0;
+        
+        while(left < right)
+        {
+            i = s[left];
+            s[left] = s[right];
+            s[right] = i;
+            right--;
+            left++;
+        
+        }
+        
+    }
+};
+
+
+
+
