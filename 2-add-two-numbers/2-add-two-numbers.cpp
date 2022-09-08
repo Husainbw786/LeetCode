@@ -12,14 +12,14 @@ class Solution {
 public:
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
      
-        ListNode *head = new ListNode();
-        ListNode *headClone = head;
-        int sum = l1->val + l2->val;
+        ListNode* head = new ListNode();
+        ListNode* headClone = head;
         bool carry = false;
+        int sum = l1->val + l2->val;
         if(sum > 9)
         {
-            carry = true;
             headClone->val = sum % 10;
+            carry = true;
         }
         else
         {
@@ -27,7 +27,6 @@ public:
         }
         l1 = l1->next;
         l2 = l2->next;
-        
         while(l1 && l2)
         {
             ListNode* temp = new ListNode();
@@ -39,8 +38,8 @@ public:
             }
             if(sum > 9)
             {
-                carry = true;
                 temp->val = sum % 10;
+                carry = true;
             }
             else
             {
@@ -53,11 +52,11 @@ public:
         }
         if(!l1)
         {
-          l1 = l2;  
+            l1 = l2;
         }
         while(l1)
         {
-            ListNode* temp = new ListNode();
+             ListNode* temp = new ListNode();
             sum = l1->val;
             if(carry)
             {
@@ -76,6 +75,7 @@ public:
             headClone->next = temp;
             headClone = headClone->next;
             l1 = l1->next;
+            
         }
         if(carry)
         {
@@ -84,5 +84,6 @@ public:
             headClone->next = temp;
         }
         return head;
+        
     }
 };
