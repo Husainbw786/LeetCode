@@ -25,7 +25,6 @@ public:
         }
         int k = count - n;
         temp = head;
-        ListNode* temp2 = head;
         k--;
         while(k)
         {
