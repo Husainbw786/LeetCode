@@ -1,18 +1,26 @@
-ListNode*ptr= head;
-int size = 0;
-while(ptr){
-size++;
-ptr=ptr->next;
+class Solution {
+public:
+ListNode* removeNthFromEnd(ListNode* head, int n) {
+ListNode* temp = head;
+int count = 0;
+while(temp)
+{
+count++;
+temp = temp->next;
 }
-if(size == n)
+if(count == n)
+{
 return head->next;
-ptr = head;
-ListNode* ptr2 = head;
-for(int x = 0; x < size-n; x++){
-ptr = ptr->next;
-if(x != 0)
-ptr2=ptr2->next;
 }
-ptr =ptr->next;
-ptr2->next = ptr;
+int k = count - n;
+temp = head;
+k--;
+while(k)
+{
+k--;
+temp = temp->next;
+}
+temp->next = temp->next->next;
 return head;
+}
+};
