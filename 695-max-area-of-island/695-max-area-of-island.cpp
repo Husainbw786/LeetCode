@@ -11,7 +11,6 @@ public:
         }
         vis[i][j] = true;
         count++;
-        cout << count << " " ;
         MaxArea(i+1,j,grid,count,vis);
         MaxArea(i-1,j,grid,count,vis);
         MaxArea(i,j+1,grid,count,vis);
