@@ -12,7 +12,7 @@
 class Solution {
 public:
     
-    void inorder(TreeNode* root,vector<int>&v)
+    void inorder(TreeNode* root, vector<int>&v)
     {
         if(root == NULL)
         {
