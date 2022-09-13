@@ -29,24 +29,20 @@ public:
         int power = 0;
         while(!q.empty())
         {
-            Node* temp = q.front();
-            q.pop();
-             count++;
-            if(pow (2,power) != count)
+           int size = q.size();
+            Node* nx = NULL;
+            while(size--)
             {
-                temp->next = q.front();
-               
-            }
-            else
-            {
-                count = 0;
-                power++;
-                temp->next = NULL;
-            }
-            if(temp->left)
-            {
-                q.push(temp->left);
-                q.push(temp->right);
+                Node* temp = q.front();
+                q.pop();
+                temp->next = nx;
+                nx = temp;
+                if(temp->left)
+                {
+                    q.push(temp->right);
+                    q.push(temp->left);
+                }
+                
             }
         }
         
