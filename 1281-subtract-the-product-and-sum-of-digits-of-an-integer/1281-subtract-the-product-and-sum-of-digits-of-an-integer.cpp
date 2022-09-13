@@ -2,21 +2,16 @@ class Solution {
 public:
     int subtractProductAndSum(int n) {
         vector<int>v;
+        long long pro = 1;
+        int sum = 0;
         while(n > 0)
         {
             int rem = n % 10;
-            v.push_back(rem);
+            pro = pro * rem;
+            sum += rem;
             n = n/10;
         }
-        reverse(v.begin(),v.end());
-        long long pro = 1;
-        int sum = 0;
-        int i;
-        for( i=0;i<v.size();i++)
-        {
-            sum += v[i];
-            pro *= v[i];
-        }
+       
         return pro - sum;
     }
 };
