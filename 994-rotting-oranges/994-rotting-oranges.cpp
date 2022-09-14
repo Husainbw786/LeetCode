@@ -2,7 +2,10 @@ class Solution {
 public:
     bool isValid(int i, int j, int m ,int n)
     {
-        if(i<0 || j<0 || i>=n || j>=m) return 0;
+        if(i<0 || j<0 || i>=n || j>=m)
+        {
+            return 0;
+        }
         return 1;
     }
     int orangesRotting(vector<vector<int>>& grid) {
