@@ -8,7 +8,7 @@ public:
         vector<int>temp;
         sort(nums.begin(),nums.end());
         int i,j,k;
-        for(i=0;i<n-2;i++)
+        for(i=0;i< n-2 && nums[i] <= 0;i++)
         {
             j = i+1;
             k = n-1;
