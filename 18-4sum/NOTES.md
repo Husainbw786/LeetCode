@@ -1,0 +1,1 @@
+long long newTarget = (long long)target - nums[i] - nums[j];
