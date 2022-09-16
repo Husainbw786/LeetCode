@@ -14,8 +14,7 @@ public:
         {
             temp.push_back(i);
             combination(i+1,k,n,temp);
-            temp.pop_back();
-            
+            temp.pop_back();    
         }
         
     }
