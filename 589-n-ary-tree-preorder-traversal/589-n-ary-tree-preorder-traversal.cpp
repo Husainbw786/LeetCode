@@ -28,8 +28,8 @@ public:
             return;
         }
         v.push_back(root->val);
-       for (Node* child : root -> children) {
-            traversal(child, v);
+       for (Node* root : root -> children) {
+            traversal(root, v);
        }
     }
     
