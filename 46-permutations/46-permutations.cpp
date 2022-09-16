@@ -19,8 +19,7 @@ public:
     }
     
     vector<vector<int>> permute(vector<int>& nums) {
-        
-     
+       
         permutation(nums,0,nums.size()-1);
         return ans;
         
