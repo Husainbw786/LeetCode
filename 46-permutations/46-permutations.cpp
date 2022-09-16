@@ -4,7 +4,7 @@ public:
     
     void permutation(vector<int>& nums, int low , int high)
     {
-        if( low >= high)
+        if( low == high)
         {
             ans.push_back(nums);
             return;
