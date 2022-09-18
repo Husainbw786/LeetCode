@@ -2,7 +2,7 @@ class Solution {
 public:
     vector<vector<int>>ans;
     
-    void permutation(vector<int>& nums, int low , int high)
+    void permutation(vector<int> nums, int low , int high)
     {
         if( low == high)
         {
@@ -13,7 +13,7 @@ public:
         {
             swap(nums[low],nums[i]);
            permutation(nums,low+1,high);
-            swap(nums[low],nums[i]);
+           // swap(nums[low],nums[i]);
                 
         }
     }
