@@ -9,11 +9,9 @@ public:
         {
             if(command[i] == '(' && command[i+1] == ')')
             {
-                ans += 'o';
-                
-                
+                ans += 'o'; 
             }
-     else if(command[i] == '(' && command[i+1] == 'a' && command[i+2] == 'l' && command[i+3] == ')')
+     else if(command[i] == '(' && command[i+1] == 'a')
             {
                 ans += 'a';
                 ans += 'l';
