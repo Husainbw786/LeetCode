@@ -4,16 +4,13 @@ public:
         int i;
         int n = nums.size();
         vector<int>v;
+       
         for(i=0;i<n;i++)
         {
-            v.push_back(nums[i]);
-        }
-        for(i=0;i<n;i++)
-        {
-            nums[i] = v[v[i]];
+            v.push_back(nums[nums[i]]);
             
         }
-        return nums;
+        return v;
         
     }
 };
