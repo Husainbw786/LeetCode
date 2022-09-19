@@ -1,5 +1,20 @@
 class Solution {
 public:
+    
+    int count_space(string st)
+    {
+        int i;
+        int count = 0;
+        for(i=0;i<st.length();i++)
+        {
+            if(st[i] == ' ')
+            {
+                count++;
+            }
+        }
+        return count;
+    }
+        
     int mostWordsFound(vector<string>& sentences) {
         
         int i;
@@ -10,17 +25,11 @@ public:
         for(i=0;i<n;i++)
         {
             string s = sentences[i];
-            int count = 0;
-            for(j=0;j<s.size();j++)
+            int ans = count_space(s);
+           
+            if(max < ans)
             {
-                if(s[j] == ' ')
-                {
-                    count++;
-                }
-            }
-            if(max < count)
-            {
-                max = count;
+                max = ans;
             }
         }
         return max+1;
