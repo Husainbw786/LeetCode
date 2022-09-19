@@ -11,11 +11,10 @@ public:
             {
                 ans += 'o'; 
             }
-     else if(command[i] == '(' && command[i+1] == 'a')
+           else if(command[i] == '(' && command[i+1] == 'a')
             {
                 ans += 'a';
-                ans += 'l';
-                
+                ans += 'l';    
             }
             else if(command[i] == 'G')
             {
