@@ -1,0 +1,32 @@
+vector<int> ans;
+ParkingSystem(int big, int medium, int small) {
+ans.push_back(small);
+ans.push_back(medium);
+ans.push_back(big);
+}
+bool addCar(int c) {
+if(c==3){
+if(ans[0]==0)
+return false;
+else {
+ans[0]--;
+return true;
+}
+}
+else if(c==2){
+if(ans[1]==0)
+return false;
+else {
+ans[1]--;
+return true;
+}
+}
+else{
+if(ans[2]==0)
+return false;
+else {
+ans[2]--;
+return true;
+}
+}
+}
