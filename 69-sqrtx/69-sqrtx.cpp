@@ -7,8 +7,8 @@ public:
         int res = 0;
         while(low <= high)
         {
-            int mid = low + (high - low)/2;
-            if(mid <= x / mid)
+           long long int mid = low + (high - low)/2;
+            if(mid*mid <= x)
             {
                 low = mid + 1;
                 res = mid;
