@@ -8,7 +8,9 @@ public:
         {
             if(address[i] == '.')
             {
-                ans += "[.]";
+                ans.push_back('[');
+                ans.push_back('.');
+                ans.push_back(']');
             }
             else
             {
