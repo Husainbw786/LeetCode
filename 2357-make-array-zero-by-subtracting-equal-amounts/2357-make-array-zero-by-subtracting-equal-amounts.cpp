@@ -1,17 +1,27 @@
 class Solution {
 public:
     int minimumOperations(vector<int>& nums) {
-        
-        unordered_set<int>st;
-        int i;
-       
-        for(auto x : nums)
+        sort(nums.begin(),nums.end());
+        int n = nums.size();
+        int i,j;
+        int count = 0;
+        for(i=0;i<n;i++)
         {
-            if(x > 0)
+            if(nums[i] == 0)
             {
-                st.insert(x);
+                continue;
             }
+            int x = nums[i];
+            for(j = 0;j<n;j++)
+            {
+                if(nums[j] > 0)
+                {
+                    nums[j] = nums[j] - x;
+                }
+            }
+            count++;
         }
-        return st.size();
+        return count;
+        
     }
 };
