@@ -8,10 +8,7 @@ public:
         for(i=0;i<n;i++)
         {
             mp[nums[i]]++;
-        }
-        for(auto x : mp)
-        {
-            if(x.second > 1)
+            if(mp[nums[i]] > 1)
             {
                 return true;
             }
