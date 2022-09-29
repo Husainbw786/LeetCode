@@ -4,12 +4,12 @@ public:
         
         unordered_set<int>st;
         int i;
-        int n = nums.size();
-        for(i=0;i<n;i++)
+       
+        for(auto x : nums)
         {
-            if(nums[i] > 0)
+            if(x > 0)
             {
-                st.insert(nums[i]);
+                st.insert(x);
             }
         }
         return st.size();
