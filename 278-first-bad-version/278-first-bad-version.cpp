@@ -3,34 +3,29 @@
 
 class Solution {
 public:
-    
-    int Check(int low, int high)
-    {
-        int mid = low + (high-low)/2;
-        if(low <= high)
+    int firstBadVersion(int n) {
+        
+        int low = 1;
+        int high = n;
+        int ans = 0;
+        while(low <= high)
         {
+            int mid = low + (high - low)/2;
             if(isBadVersion(mid) && !isBadVersion(mid-1))
             {
-                return mid;
+                ans = mid;
+                break;
             }
             else if(!isBadVersion(mid))
             {
-                return Check(mid+1,high);
+                low = mid + 1;  
             }
             else
             {
-                return Check(low,mid-1);
+                high = mid - 1;
             }
         }
-        return high;
-    }
-    
-    int firstBadVersion(int n) {
+        return ans;
         
-        if(n == 1)
-        {
-            return 1;
-        }
-        return Check(2,n);
     }
 };
