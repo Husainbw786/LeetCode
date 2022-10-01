@@ -12,29 +12,44 @@ public:
         
         ListNode* p1 = headA;
         ListNode* p2 = headB;
-        if(p1 == NULL || p2 == NULL)
+       int n = 0;
+        int m = 0;
+        while(p1 != NULL)
         {
-            return NULL;
+            n++;
+            p1 =  p1->next;
         }
-        while(p1 != NULL && p2 != NULL && p1 != p2)
+        while(p2 != NULL)
         {
-            p1 = p1->next;
-            p2 = p2->next;
-            
+            m++;
+            p2 =  p2->next;
+        }
+        p1 = headA;
+        p2 = headB;
+        int diff = abs(n-m);
+        if(n > m)
+        {
+            while(diff--)
+            {
+                p1 = p1->next;
+            }
+        }
+        else
+        {
+            while(diff--)
+            {
+                p2 = p2->next;
+            }
+        }
+        while(p1 != NULL && p2 != NULL)
+        {
             if(p1 == p2)
             {
                 return p1;
-                
             }
-            if(p1 == NULL)
-            {
-                p1 = headB;
-            }
-            if(p2 == NULL)
-            {
-                p2 = headA;
-            }
+            p1 = p1->next;
+            p2 = p2->next;
         }
-        return p1;
+        return 0;
     }
 };
