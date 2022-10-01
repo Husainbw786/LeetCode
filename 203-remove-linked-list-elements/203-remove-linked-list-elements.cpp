@@ -13,7 +13,7 @@ public:
     ListNode* removeElements(ListNode* head, int val) {
      
       
-        while(head!=nullptr && head->val==val)
+        while(head!=nullptr && head->val == val)
         {
             head = head->next;
         }
@@ -28,8 +28,6 @@ public:
             {
                 temp = temp->next;
             }
-          
-            
         }
         
         return head;
