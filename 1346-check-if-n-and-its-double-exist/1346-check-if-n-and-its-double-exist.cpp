@@ -8,8 +8,7 @@ public:
         {
             mp[arr[i]]++;
         }
-        for(i=0;i<n;i++)
-        {
+       
             for(int j=0;j<n;j++)
             {
                 
@@ -27,7 +26,7 @@ public:
                 }
                 
             }
-        }
+        
         return false;
             
         
