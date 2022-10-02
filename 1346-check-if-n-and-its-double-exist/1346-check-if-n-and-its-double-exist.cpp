@@ -9,26 +9,24 @@ public:
             mp[arr[i]]++;
         }
        
-            for(int j=0;j<n;j++)
+       for(int j=0;j<n;j++)
             {
-                
-     if(mp.find(arr[j]) != mp.end() && mp.find(2*arr[j]) != mp.end() && arr[j] != 0)
-                {
-                   
-                    return true;
-                }
-                if(arr[j] == 0)
-                {
-                   if(mp[arr[j]] >= 2)
-                  {
-                      return true;
-                  }
-                }
-                
-            }
+           
+    if(mp.find(arr[j]) != mp.end() && mp.find(2*arr[j]) != mp.end() && arr[j] != 0)
+        {
+
+            return true;
+        }
+      if(arr[j] == 0)
+         {
+           if(mp[arr[j]] >= 2)
+              {
+                  return true;
+              }
+          }
+                 
+        }
         
-        return false;
-            
-        
+        return false; 
     }
 };
