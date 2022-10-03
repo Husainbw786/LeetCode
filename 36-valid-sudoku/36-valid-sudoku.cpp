@@ -2,7 +2,7 @@ class Solution {
 public:
     bool isValidSudoku(vector<vector<char>>& board) {
         
-        set<string>st;
+        unordered_set<string>st;
         int i,j;
         int n = board.size();
         int m = board[0].size();
