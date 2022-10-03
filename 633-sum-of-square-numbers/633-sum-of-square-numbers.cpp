@@ -1,12 +1,8 @@
 class Solution {
 public:
     bool judgeSquareSum(int c) {
-        if(c == 0 || c == 1)
-        {
-            return true;
-        }
+       
         int r = sqrt(c);
-        cout << r ;
         long long low = 0;
         long long high = r;
         while(low <= high)
