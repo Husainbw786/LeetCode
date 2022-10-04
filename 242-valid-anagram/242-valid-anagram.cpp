@@ -6,20 +6,20 @@ public:
         {
             return false;
         }
-        unordered_map<char,int>mp;
+        int freq[26] = {0};
         int i;
         int n = s.size();
         for(i=0;i<n;i++)
         {
-            mp[s[i]]++;
+            freq[s[i] - 'a']++;
         }
         int count = 0;
         for(i=0;i<n;i++)
         {
-            if(mp.find(t[i]) != mp.end() && mp[t[i]] > 0)
+            if(freq[t[i] - 'a'] > 0)
             {
                
-                mp[t[i]]--;
+                freq[t[i] - 'a']--;
                 count++;
             }
             else
