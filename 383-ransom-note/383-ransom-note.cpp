@@ -2,17 +2,17 @@ class Solution {
 public:
     bool canConstruct(string ransomNote, string magazine) {
      
-        unordered_map<char,int>mp;
+        int freq[26] = {0};
         int i;
         for(i=0;i<magazine.size();i++)
         {
-            mp[magazine[i]]++;
+            freq[magazine[i] - 'a']++;
         }
         for(i=0;i<ransomNote.size();i++)
         {
-            if(mp.find(ransomNote[i]) != mp.end() && mp[ransomNote[i]] > 0)
+            if(freq[ransomNote[i] - 'a'] > 0)
             {
-                mp[ransomNote[i]]--;
+                freq[ransomNote[i] - 'a']--;
             }
             else
             {
