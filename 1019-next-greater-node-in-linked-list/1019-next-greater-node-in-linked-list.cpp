@@ -17,7 +17,7 @@ public:
         while(temp->next != NULL)
         {
             ListNode* p = temp->next;
-            while((temp->val >= p->val) && p->next != NULL )
+            while((temp->val >= p->val) && p->next != NULL)
             {
                 p = p->next;
             }
