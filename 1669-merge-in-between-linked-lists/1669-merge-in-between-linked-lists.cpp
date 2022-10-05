@@ -10,39 +10,32 @@
  */
 class Solution {
 public:
-    
-    ListNode* getTail(ListNode* temp)
-    {
-        while(temp->next != NULL)
-        {
-            temp = temp->next;
-        }
-        return temp;
-    }
-    
     ListNode* mergeInBetween(ListNode* list1, int a, int b, ListNode* list2) {
-        
+     
         ListNode* temp = list1;
-        ListNode* A_Node;
-        ListNode* B_Node;
-        int indx = 0;
-        while(temp)
+        int pos = 0;
+        while(true)
         {
-            if(indx == a-1)
+            while(pos < a-1)
             {
-                A_Node = temp;
+                temp = temp->next;
+                pos++;
             }
-            else if(indx == b+1)
+            ListNode* first_connect = temp;
+            while(pos <= b)
             {
-                B_Node = temp;
+                temp = temp->next;
+                pos++;
             }
-            temp = temp->next;
-            indx++;
+            first_connect->next = list2;
+            while(list2->next)
+            {
+                list2 = list2->next;
+            }
+            list2->next = temp;
+            break;
         }
-            
-        A_Node->next = list2;
-        getTail(list2)->next = B_Node;    
-         
         return list1;
     }
+    
 };
