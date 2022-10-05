@@ -4,8 +4,8 @@ public:
         
        
         int i;
-       int n = nums.size();
-        int sum = 0;
+        int n = nums.size();
+        int sum = nums[i];
         for(i=1;i<n;i++)
         {
           nums[i] += nums[i-1];
