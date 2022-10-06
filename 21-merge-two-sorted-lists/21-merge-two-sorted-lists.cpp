@@ -12,7 +12,7 @@ class Solution {
 public:
     ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
        
-        ListNode* head;
+        ListNode* head = list1;;
         ListNode* headClone;
         
         if(list1 == NULL)
@@ -25,12 +25,11 @@ public:
         }
         if(list1->val > list2->val)
         {
-            head = new ListNode(list2->val);
+            head = list2;
             list2 = list2->next;
         }
         else
         {
-            head = new ListNode(list1->val);
             list1 = list1->next;
         }
         headClone = head;
@@ -38,26 +37,25 @@ public:
         {
             if(list1->val > list2->val)
             {
-                headClone->next = new ListNode(list2->val);
+                headClone->next = list2;
                 list2 = list2->next;
             }
             else
             {
-                 headClone->next = new ListNode(list1->val);
+                 headClone->next = list1;
                  list1 = list1->next;
             }
             headClone  = headClone->next;
         }
         if(list1 == NULL)
         {
-            list1 = list2;
+            headClone->next = list2;
         }
-        while(list1 != NULL)
+        else
         {
-            headClone->next = new ListNode(list1->val);
-            list1 = list1->next;
-            headClone = headClone->next;
+          headClone->next = list1;   
         }
+        
         return head;
        
     }
