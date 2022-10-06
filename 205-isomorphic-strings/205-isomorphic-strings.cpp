@@ -7,7 +7,7 @@ public:
         int n = s.size();
         for(i=0;i<n;i++)
         {
-            if(! mp1[s[i]] &&  !mp2[t[i]])
+            if(!mp1[s[i]] && !mp2[t[i]])
             {
             mp1[s[i]] = t[i];
             mp2[t[i]] = s[i];
