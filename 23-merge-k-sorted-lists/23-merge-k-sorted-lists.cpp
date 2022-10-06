@@ -28,23 +28,14 @@ public:
                 temp = temp->next;
             }
         }
-        ListNode* start = NULL;
-        ListNode* end = NULL;
+        ListNode* start = new ListNode(0);
+        ListNode* head = start;
         while(!pq.empty())
         {
-            if(start == NULL)
-            {
-                start = new ListNode(pq.top());
-                pq.pop();
-                end = start;
-            }
-            else
-            {
-                end->next = new ListNode(pq.top());
-                pq.pop();
-                end = end->next;
-            }
+            head->next = new ListNode(pq.top());
+            pq.pop();
+            head = head->next;
         }
-        return start;
+        return start->next;
     }
 };
