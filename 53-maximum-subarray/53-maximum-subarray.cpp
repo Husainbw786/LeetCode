@@ -3,7 +3,7 @@ public:
     int maxSubArray(vector<int>& nums) {
         
         int max_ending_here = 0;
-        int max_so_far = INT_MIN;
+        int max_sum = INT_MIN;
         int i;
         for(i=0;i<nums.size();i++)
         {
@@ -12,11 +12,11 @@ public:
             {
                 max_ending_here = nums[i];
             }
-            if(max_so_far < max_ending_here)
+            if(max_sum < max_ending_here)
             {
-                max_so_far = max_ending_here;
+                max_sum = max_ending_here;
             }
         }
-        return max_so_far;
+        return max_sum;
     }
 };
