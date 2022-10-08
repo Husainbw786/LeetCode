@@ -32,12 +32,12 @@ public:
         int high = v.size()-1;
         while(low < high)
         {
-            int sum = v[low] + v[high];
-            if(sum == k)
+            
+            if( v[low] + v[high] == k)
             {
                 return  true;
             }
-            else if(sum > k)
+            else if( v[low] + v[high]  > k)
             {
                 high--;
             }
