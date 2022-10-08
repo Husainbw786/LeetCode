@@ -28,9 +28,9 @@ public:
         vector<int>v;
         dfs(root,v);
         int mini = INT_MAX;
-        for(int i=1;i<v.size();i++)
+        for(int i=0;i<v.size()-1;i++)
         {
-            mini = min(v[i]-v[i-1],mini);
+            mini = min(v[i+1]-v[i],mini);
         }
         return mini;
         
