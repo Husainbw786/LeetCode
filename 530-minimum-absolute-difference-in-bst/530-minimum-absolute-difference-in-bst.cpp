@@ -12,30 +12,32 @@
 class Solution {
 public:
     
-    void dfs(TreeNode* root,vector<int>&v)
+    int dfs(TreeNode* root,int &mini,int & val)
     {
-        if(root == NULL)
+        if(root->left != NULL)
         {
-            return;
+            dfs(root->left,mini,val);
         }
-        dfs(root->left,v);
-        v.push_back(root->val);
-        dfs(root->right,v);
+        if(val >= 0)
+        {
+            mini = min(mini,abs(root->val - val));
+        }
+        val = root->val;
+        if(root->right != NULL)
+        {
+          dfs(root->right,mini,val);  
+        }
+        
+         return mini;
     }
     
     int getMinimumDifference(TreeNode* root) {
         
-        vector<int>v;
-        dfs(root,v);
+    
+        int val = -1;
         int mini = INT_MAX;
-        for(int i=0; i<v.size()-1;i++)
-        {
-            if(v[i] == v[i+1])
-            {
-                continue;
-            }
-            mini = min(v[i+1] - v[i],mini);
-        }
-        return mini;
+       return dfs(root,mini,val);
+        
+       
     }
 };
