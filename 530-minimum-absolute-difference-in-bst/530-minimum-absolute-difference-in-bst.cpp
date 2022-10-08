@@ -20,7 +20,7 @@ public:
         }
         if(val >= 0)
         {
-            mini = min(mini,abs(root->val - val));
+            mini = min(mini,root->val - val);
         }
         val = root->val;
         if(root->right != NULL)
