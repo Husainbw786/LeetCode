@@ -24,7 +24,6 @@ public:
             {
                 TreeNode* temp = q.front();
                 q.pop();
-                sum += temp->val;
                 if(temp->left)
                 {
                     q.push(temp->left);
@@ -33,6 +32,7 @@ public:
                 {
                     q.push(temp->right);
                 }
+                sum += temp->val;
             }
         }
         return sum;
