@@ -35,10 +35,6 @@ public:
             {
                 return false;
             }
-            if(temp1->val != temp2->val)
-            {
-                return false;
-            }
             if(temp1->left && temp2->right)
             {
                 q.push(temp1->left);
