@@ -12,23 +12,26 @@
 class Solution {
 public:
     
-   void traverse(TreeNode* root, int &good_nodes, int maxi) {
-        if (root == NULL) 
+    void dfs(TreeNode* root, int maxi, int &good_node)
+    {
+        if(root == NULL)
         {
             return;
         }
-        if (root->val >= maxi)
+        if(maxi <= root->val)
         {
-            good_nodes++;
+            good_node++;
         }
         maxi = max(maxi,root->val);
-        traverse(root->left,good_nodes,maxi);
-        traverse(root->right,good_nodes,maxi);
+        dfs(root->left,maxi,good_node);
+        dfs(root->right,maxi,good_node);
     }
     
     int goodNodes(TreeNode* root) {
-        int good_nodes = 0;
-        traverse(root,good_nodes,root->val);
-        return good_nodes;
+        
+        int good_node = 0;
+        int maxi = INT_MIN;
+        dfs(root,maxi,good_node);
+        return good_node;
     }
 };
