@@ -17,24 +17,24 @@ public:
         {
             return v;
         }
-        deque<TreeNode*>q;
+        deque<TreeNode*>dq;
       
-        q.push_back(root);
-        while(!q.empty())
+        dq.push_back(root);
+        while(!dq.empty())
         {
-            int size = q.size();
-            v.push_back(q.back()->val);
+            int size = dq.size();
+            v.push_back(dq.back()->val);
             while(size--)
             {
-                TreeNode* temp = q.front();
-                q.pop_front();
+                TreeNode* temp = dq.front();
+                dq.pop_front();
                 if(temp->left)
                 {
-                    q.push_back(temp->left);
+                    dq.push_back(temp->left);
                 }
                 if(temp->right)
                 {
-                    q.push_back(temp->right);
+                    dq.push_back(temp->right);
                 }
                 
             }
