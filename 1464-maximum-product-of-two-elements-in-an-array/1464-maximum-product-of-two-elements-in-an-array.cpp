@@ -4,7 +4,7 @@ public:
         
         sort(nums.begin(),nums.end());
         int n = nums.size();
-        long pro = (nums[n-1] - 1)* (nums[n-2] - 1);
+        int pro = (nums[n-1] - 1)* (nums[n-2] - 1);
         return pro;
     }
 };
