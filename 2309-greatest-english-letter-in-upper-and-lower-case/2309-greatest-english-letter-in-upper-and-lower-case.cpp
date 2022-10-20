@@ -5,9 +5,7 @@ public:
         map<char,int>mp;
         int i;
         string ans = "";
-        string temp = "";
         sort(s.begin(),s.end());
-        vector<char>v;
         int n = s.size();
         for(i=0;i<n;i++)
         {
