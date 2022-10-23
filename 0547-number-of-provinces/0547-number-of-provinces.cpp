@@ -17,30 +17,24 @@ public:
     int findCircleNum(vector<vector<int>>& grid) {
         
         int n = grid.size();
-        int m = grid[0].size();
         int i,j;
         vector<int>adj[n];
-        for(i=0;i<n;i++)
-        {
-            for(j=0;j<m;j++)
-            {
-                if(grid[i][j] == 1 && i != j)
-                {
+        for(i = 0; i < n; i++) {
+            int m = grid[i].size();
+            for(j = 0; j < m; j++) {
+                if(grid[i][j] == 1 && i != j) {
                     adj[i].push_back(j);
-                    adj[j].push_back(i);
                 }
             }
         }
         int count = 0;
-        vector<int>vis(n,0);
-        for(i=0;i<n;i++)
-        {
-            if(!vis[i])
-            {
-                dfs(i,vis,adj);
+        vector<int> vis(n, 0);
+        for(i = 0; i < n; i++) {
+            if(!vis[i]) {
+                dfs(i, vis, adj);
                 count++;
             }
         }
         return count;
     }
-};
+};        
