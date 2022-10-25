@@ -12,6 +12,7 @@ public:
               adj[i].push_back(x);
           }
         }
+        // reverse the nodes of graph and apply topo sort.
         vector<int>adjRev[V];
         for(i=0;i<V;i++)
         {
