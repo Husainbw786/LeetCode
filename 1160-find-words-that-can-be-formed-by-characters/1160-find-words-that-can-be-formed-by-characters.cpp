@@ -24,6 +24,10 @@ public:
                     count++;
                     mp2[temp[j]]--;
                 }
+                else
+                {
+                    break;
+                }
             }
             if(count == temp.size())
             {
