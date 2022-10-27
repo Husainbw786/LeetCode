@@ -13,6 +13,10 @@ public:
             if(max < x)
             {
                 max = x;
+                if(max == 9)
+                {
+                    break;
+                }
             }
             temp.clear();
         }
