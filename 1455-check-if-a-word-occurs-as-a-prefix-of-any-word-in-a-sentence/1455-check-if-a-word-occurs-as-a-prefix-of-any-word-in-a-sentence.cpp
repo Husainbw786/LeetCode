@@ -23,7 +23,6 @@ public:
         
         for(i=0;i<v.size();i++)
         {
-            cout << v[i] << " ";
             string check = v[i];
             bool flag = true;
             for(int j=0;j<searchWord.size();j++)
