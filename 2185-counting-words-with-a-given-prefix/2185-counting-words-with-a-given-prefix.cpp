@@ -8,7 +8,21 @@ public:
         int m = pref.size();
         for(i=0;i<n;i++)
         {
-            if(words[i].substr(0,m) == pref.substr(0,m))
+            string temp = words[i];
+            bool flag = true;
+            for(int j=0;j<pref.size();j++)
+            {
+                if(temp[j] == pref[j])
+                {
+                    continue;
+                }
+                else
+                {
+                    flag = false;
+                    break;
+                }
+            }
+            if(flag)
             {
                 count++;
             }
