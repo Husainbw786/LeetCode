@@ -32,7 +32,6 @@ public:
         }
         if(max_one > max_zero)
         {
-            cout << max_one << " " << max_zero;
             return true;
         }
         return false;
