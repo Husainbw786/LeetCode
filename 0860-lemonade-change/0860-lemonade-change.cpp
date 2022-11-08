@@ -4,7 +4,6 @@ public:
         
         int five = 0;
         int ten = 0;
-        int twenty = 0;
         int i;
         int n = bills.size();
         for(i=0;i<n;i++)
@@ -28,7 +27,6 @@ public:
             }
             else
             {
-                twenty++;
                 if(ten > 0 && five > 0)
                 {
                     ten--;
