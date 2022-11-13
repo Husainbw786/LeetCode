@@ -20,6 +20,8 @@ public:
                 temp = "";
             }
         }
+        
+        
         v.push_back(temp);
         n = v.size();
         if( n != pattern.size())
