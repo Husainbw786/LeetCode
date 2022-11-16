@@ -3,7 +3,6 @@ public:
     string getSmallestString(int n, int k) {
      
         int i;
-        int count_arr[26] = {0};
         string s = "";
         for(i=0;i<n;i++)
         {
