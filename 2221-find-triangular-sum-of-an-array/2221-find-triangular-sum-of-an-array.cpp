@@ -5,7 +5,6 @@ public:
         int i;
         int n = nums.size();
         vector<int>temp;
-        
         temp = nums;
         nums.clear();
         while(temp.size() > 1)
