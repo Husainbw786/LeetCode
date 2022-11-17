@@ -1,44 +1,36 @@
 class Solution {
 public:
-    
-    static bool cmp(pair<string,int>&a,pair<string,int>&b)
-    {
-        if(a.first.size() == b.first.size())
-        {
-            return a.second < b.second;
-        }
-        return a.first.size() < b.first.size();
-    }
-    
     string arrangeWords(string text) {
         
-        int n = text.size();
-        text[0] = tolower(text[0]); 
-        vector<pair<string,int>>v;
+        map<int,vector<string>>mp;
         int i;
+        text[0] = tolower(text[0]);
         string temp = "";
-        for(i=0;i<n;i++)
+        for(i=0;i<text.size();i++)
         {
-            if(text[i] != ' ')
+            if(text[i] == ' ')
             {
-                temp += text[i];
+                int x = temp.size();
+                mp[x].push_back(temp);
+                temp = "";
             }
             else
             {
-                v.push_back({temp,i});
-                temp = "";
+                temp += text[i];
             }
         }
-        v.push_back({temp,i});
-        sort(v.begin(),v.end(),cmp);
-        string ans;
-        for(i=0;i<v.size();i++)
+        string ans = "";
+        mp[temp.size()].push_back(temp);
+        for(auto x : mp)
         {
-            ans += v[i].first;
-            ans += ' ';
+            for(auto it : x.second)
+            {
+                ans += it;
+                ans += ' ';
+            }
         }
         ans.pop_back();
-        ans[0] = ans[0] - 32;
+        ans[0] = toupper(ans[0]);
         return ans;
     }
 };
