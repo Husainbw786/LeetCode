@@ -1,1 +1,1 @@
-​
+meaning of r.find in vector not understood.
