@@ -28,7 +28,9 @@ public:
             {
                 if(v[i].rfind(dictionary[j],0) == 0)
                 {
+                    cout << dictionary[j] << " " << v[i] << endl;; 
                     v[i] = dictionary[j];
+                    
                 }
             }
         }
