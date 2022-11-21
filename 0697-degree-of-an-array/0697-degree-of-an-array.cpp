@@ -6,7 +6,7 @@ public:
         int i;
         for(i=0;i<n;i++)
         {
-            if(first.count(nums[i]) == 0)
+            if(first.find(nums[i]) == first.end())
             {
                 first[nums[i]] = i;
             }
