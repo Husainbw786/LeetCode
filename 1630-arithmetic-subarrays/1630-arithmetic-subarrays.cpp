@@ -14,8 +14,9 @@ public:
         }
         return true;
     }
-    
-    vector<bool> checkArithmeticSubarrays(vector<int>& nums, vector<int>& l, vector<int>& r) {
+    vector<bool> checkArithmeticSubarrays(vector<int>& nums, vector<int>& l, vector<int>& r) 
+    {
+        
         
         vector<bool>ans;
         int n = l.size();
