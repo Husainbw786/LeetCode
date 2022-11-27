@@ -12,6 +12,7 @@ public:
         {
             return -1;
         }
+        
         int j = n-1;
         while(j > 0)
         {
