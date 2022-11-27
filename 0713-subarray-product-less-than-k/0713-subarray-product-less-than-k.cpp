@@ -7,6 +7,7 @@ public:
         int n = nums.size();
         int count = 0;
         long long p = 1;
+        
         while(end < n)
         {
             p *= nums[end];
