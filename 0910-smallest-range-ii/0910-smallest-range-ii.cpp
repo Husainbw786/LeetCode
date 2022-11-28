@@ -2,6 +2,7 @@ class Solution {
 public:
     int smallestRangeII(vector<int>& nums, int k) {
      
+        
         sort(nums.begin(),nums.end());
         int i;
         int n = nums.size();
@@ -13,6 +14,7 @@ public:
             int high = max(nums[n-1]-k,nums[i]+k);
             ans = min(ans,high-low);
         }
+        
         return ans;
     }
 };
