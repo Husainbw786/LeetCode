@@ -30,6 +30,7 @@ public:
             prev = curr;
             curr = next;
         }
+        
         slow->next = NULL;
         ListNode* second = prev;
         while(second != NULL)
@@ -40,6 +41,7 @@ public:
            second->next = temp1;
            first = temp1;
            second = temp2;
+            
         }
     }
 };
