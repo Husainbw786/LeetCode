@@ -6,6 +6,7 @@ public:
         int n = haystack.size();
         int m = needle.size();
         int ans = -1;
+        
         for(i=0;i<n;i++)
         {
             int x = 0;
