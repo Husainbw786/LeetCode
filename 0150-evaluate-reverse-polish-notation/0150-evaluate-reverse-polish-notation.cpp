@@ -2,10 +2,11 @@ class Solution {
 public:
     int evalRPN(vector<string>& tokens) {
         
-        int n = tokens.size();
+        int len = tokens.size();
         
         stack<long long>st;
-        for(int i=0;i<n;i++)
+        
+        for(int i=0;i<len;i++)
         { 
            if(tokens[i] == "+")
            {
