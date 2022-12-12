@@ -12,6 +12,7 @@ public:
                swap(mat[i][j],mat[j][i]);
             }
         }
+        
         for(i=0;i<n;i++)
         {
             reverse(mat[i].begin(),mat[i].end());
@@ -59,6 +60,7 @@ public:
                swap(mat[i][j],mat[j][i]);
             }
         }
+        
         for(i=0;i<n;i++)
         {
             reverse(mat[i].begin(),mat[i].end());
