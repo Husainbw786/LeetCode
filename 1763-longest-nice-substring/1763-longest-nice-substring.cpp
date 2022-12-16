@@ -1,37 +1,40 @@
 class Solution {
 public:
+    
+    bool Is_Nice(string s, int i, int j)
+    {
+        unordered_set<char>st;
+        for(int k=i;k<=j;k++)
+        {
+            st.insert(s[k]);
+        }
+        for(int k=i;k<=j;k++)
+        {
+            if(st.find(toupper(s[k])) == st.end() || st.find(tolower(s[k])) == st.end() )
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+    
     string longestNiceSubstring(string s) {
         
-        if(s.size() < 2)
-        {
-            return "";
-        }
-            
         int n = s.size();
-        unordered_set<char>st;
-        int i;
+        int i,j;
+        int ans = 0;
+        string result = "";
         for(i=0;i<n;i++)
         {
-            st.insert(s[i]);
+            for(j=i;j<n;j++)
+            {
+                if(Is_Nice(s,i,j) && j-i+1 > ans)
+                {
+                    ans = j-i+1;
+                    result = s.substr(i,ans);
+                }
+            }
         }
-        for(i=0;i<n;i++)
-        {
-            if(st.count(tolower(s[i])) == true && st.count(toupper(s[i])) == true)
-            {
-                continue;
-            }
-            string prev = longestNiceSubstring(s.substr(0,i));
-            string next = longestNiceSubstring(s.substr(i+1));
-            if(prev.size()>=next.size())
-            {
-                return prev;
-            }
-            else
-            {
-                return next;
-            }
-            
-        }
-        return s;
+        return result;
     }
 };
