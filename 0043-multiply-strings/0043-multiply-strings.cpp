@@ -3,6 +3,7 @@ public:
     string multiply(string num1, string num2) {
         
         int n = num1.size();
+        
         int m = num2.size();
         if( num1 == "0" || num2 == "0")
         {
