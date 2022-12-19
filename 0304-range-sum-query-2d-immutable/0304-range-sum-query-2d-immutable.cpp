@@ -15,8 +15,8 @@ public:
         }
     }
     
-    int sumRegion(int r1, int c1, int r2, int c2) {
-        
+    int sumRegion(int r1, int c1, int r2, int c2) 
+    { 
         return prefix[r2 + 1][c2 + 1] - prefix[r2 + 1][c1] - prefix[r1][c2 + 1] + prefix[r1][c1] ;
     }
 };
