@@ -9,7 +9,6 @@ public:
         {
              int x = min(rectangles[i][0],rectangles[i][1]);
              v.push_back(x);
-            cout << x << " ";
         }
         n = v.size();
         sort(v.begin(),v.end());
