@@ -26,7 +26,7 @@ public:
                         }
                         x++;
                     }
-                    while(p >= 0)
+                    while(p >= 0 && !flag)
                     {
                         if(mat[p][j] == 1)
                         {
@@ -35,7 +35,7 @@ public:
                         }
                         p--;
                     }
-                    while(y < m)
+                    while(y < m && !flag)
                     {
                         if(mat[i][y] == 1)
                         {
@@ -44,7 +44,7 @@ public:
                         }
                         y++;
                     }
-                    while(q >= 0)
+                    while(q >= 0 && !flag)
                     {
                         if(mat[i][q] == 1)
                         {
