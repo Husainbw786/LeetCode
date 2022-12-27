@@ -13,24 +13,20 @@ public:
                 i++;
             }
         }
-        vector<int>ans;
-        int count = 0;
+        int j = 0;
         for(i=0;i<n;i++)
         {
-            if(nums[i] == 0)
+            if(nums[i] != 0)
             {
-                count++;
-                continue;
-            }
-            else
-            {
-                ans.push_back(nums[i]);
+               nums[j] = nums[i];
+                j++;
             }
         }
-        while(count--)
+        while(j < n)
         {
-            ans.push_back(0);
+            nums[j] = 0;
+            j++;
         }
-        return ans;
+        return nums;
     }
 };
