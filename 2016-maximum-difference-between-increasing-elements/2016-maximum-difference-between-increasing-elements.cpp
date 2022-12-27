@@ -2,26 +2,27 @@ class Solution {
 public:
     int maximumDifference(vector<int>& nums) {
         
-        int n = nums.size();
+        int curr = INT_MAX;
+        int tdiff = 0;
+        int diff = 0;
         int i;
-        int maxi = INT_MIN;
-        bool flag = false;
-        for(i=0;i<n-1;i++)
+        int n = nums.size();
+        for(i=0;i<n;i++)
         {
-            for(int j=i+1;j<n;j++)
+            if(nums[i] < curr)
             {
-               if(nums[i] < nums[j])
-                {
-                    flag = true;
-                    int diff = nums[j] - nums[i];
-                    maxi = max(maxi,diff);
-                } 
-            }   
+                curr = nums[i];
+            }
+            diff = nums[i] - curr;
+            if(tdiff < diff)
+            {
+                tdiff = diff;
+            }
         }
-        if(!flag)
+        if(tdiff == 0)
         {
             return -1;
         }
-        return maxi;
+        return tdiff;
     }
 };
