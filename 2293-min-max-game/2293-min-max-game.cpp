@@ -7,7 +7,6 @@ public:
        
         while(n != 1)
         {
-            
             vector<int>v;
             int count = 0;
             for(i=0;i<n-1;i++)
