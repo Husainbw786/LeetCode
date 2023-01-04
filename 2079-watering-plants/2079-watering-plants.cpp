@@ -18,7 +18,8 @@ public:
             {
                 count += i;
                 count += i+1;
-                x = capacity - plants[i];
+                x = capacity;
+                x = x - plants[i];
             }
         }
         return count;
