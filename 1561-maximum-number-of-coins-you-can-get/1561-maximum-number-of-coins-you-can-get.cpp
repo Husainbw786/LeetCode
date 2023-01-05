@@ -6,9 +6,7 @@ public:
         int i = 0;
         int j = n-2;
         int k = n-1;
-        int alice = 0;
         int me = 0;
-        int bob = 0;
         sort(piles.begin(),piles.end());
         while(i < j)
         {
