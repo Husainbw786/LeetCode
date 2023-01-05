@@ -12,8 +12,6 @@ public:
         sort(piles.begin(),piles.end());
         while(i < j)
         {
-            bob += piles[i];
-            alice += piles[k];
             me += piles[j];
             i++;
             j -= 2;
