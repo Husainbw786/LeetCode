@@ -18,15 +18,7 @@ public:
     
     void flip(vector<int>& arr, int x)
     {
-        int temp, start = 0;
-        while(start <= x)
-        {
-            temp = arr[start];
-            arr[start] = arr[x];
-            arr[x] = temp;
-            start++;
-            x--;
-        }
+       reverse(arr.begin(),arr.begin()+x+1);
     }
     
     vector<int> pancakeSort(vector<int>& arr) {
