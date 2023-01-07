@@ -23,7 +23,6 @@ public:
             {   
                 while(!st.empty() && st.top() == popped[j] && j < n)
                 {
-                    cout << st.top() << " ";
                     st.pop();
                     j++;
                 }
