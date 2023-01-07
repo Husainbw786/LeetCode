@@ -30,16 +30,7 @@ public:
             }
             
         }
-        while(!st.empty() && j < n)
-        {
-            int top = st.top();
-            st.pop();
-            if(popped[j] != top)
-            {
-                return false;
-            }
-            j++;
-        }
+       
         if(st.empty())
         {
             return true;
