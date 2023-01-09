@@ -6,22 +6,14 @@ public:
         int m = nums2.size();
         int i;
         unordered_map<int,int>mp;
-        for(i=0;i<n;i++)
+        for(i=0;i<m;i++)
         {
-            int x = nums1[i];
-            for(int j=0;j<m;j++)
-            {
-                if(nums2[j] == x)
-                {
-                    mp[nums1[i]] = j;
-                    break;
-                }
-            }
+            mp[nums2[i]] = i;
         }
         for(i=0;i<n;i++)
         {
-            int start = mp[nums1[i]];
             int x = nums1[i];
+            int start = mp[x];
             bool flag = false;
             for(int j=start+1;j<m;j++)
             {
