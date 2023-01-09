@@ -6,28 +6,27 @@ public:
         int m = nums2.size();
         int i;
         unordered_map<int,int>mp;
+        stack<int>st;
         for(i=0;i<m;i++)
         {
-            mp[nums2[i]] = i;
+            while(st.size() && nums2[i] > st.top())
+            {
+                mp[st.top()] = nums2[i];
+                st.pop();
+            }
+            st.push(nums2[i]);
         }
+        
         for(i=0;i<n;i++)
         {
-            int x = nums1[i];
-            int start = mp[x];
-            bool flag = false;
-            for(int j=start+1;j<m;j++)
+            if(mp.find(nums1[i]) != mp.end())
             {
-                if(nums2[j] > x)
-                {
-                    nums1[i] = nums2[j];
-                    flag = true;
-                    break;
-                }
+                nums1[i] = mp[nums1[i]];
             }
-           if(!flag)
-           {
-               nums1[i] = -1;
-           }
+            else
+            {
+                nums1[i] = -1;
+            }
         }
         return nums1;
     }
