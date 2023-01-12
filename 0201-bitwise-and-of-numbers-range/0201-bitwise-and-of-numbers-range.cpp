@@ -6,9 +6,7 @@ public:
         while(left != right)
         {
             left = left >> 1;
-          //  cout << left << " ";
             right = right >> 1;
-            //cout << right << endl;
             count++;
         }
         while(count--)
