@@ -1,1 +1,1 @@
-​
+we will take a comulative sum from starting and will update that remainder everytime in form of key and pairs if we find remainder in map then we will add the frequency of remainder to our ans.
