@@ -24,7 +24,6 @@ public:
     vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
         
         int n = candidates.size();
-        set<vector<int>>st;
         vector<vector<int>>ans;
         solve(0,n,ans,candidates,target);
         return ans;
