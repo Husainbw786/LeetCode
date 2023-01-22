@@ -1,10 +1,10 @@
 class Solution {
 public:
-    vector<string>v;
     
+    vector<string>v;
     void solve(int idx,int n,string s,string& temp,int k)
     {
-        if(idx >= n)
+        if(idx == n)
         {
             v.push_back(temp);
             return;
@@ -22,13 +22,14 @@ public:
     
     string getHappyString(int n, int k) {
       
-        string s = "abc";
-        string temp = "";
-        solve(0,n,s,temp,k);
-        if(k > v.size())
-           {
-               return "";
-           }
+       string s = "abc";
+       string temp = "";
+       solve(0,n,s,temp,k);
+       if(k > v.size())
+       {
+           return "";
+       }
+        
         return v[k-1];
     } 
 };
