@@ -11,13 +11,14 @@ public:
             }
             return;
         }     
-        
+        // pick the element
         if(temp.size() == 0 || temp.back() <= nums[i])
         {
             temp.push_back(nums[i]);
             solve(i+1,n,nums,st);
             temp.pop_back();
         }
+        // not picking
             solve(i+1,n,nums,st);
     }
     vector<vector<int>> findSubsequences(vector<int>& nums) {
