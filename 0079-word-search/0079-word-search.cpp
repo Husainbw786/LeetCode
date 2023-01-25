@@ -39,10 +39,14 @@ public:
         {
             for(j=0;j<m;j++)
             {
-                if(dfs(i,j,board,word,0))
+                if(board[i][j] == word[0])
                 {
-                    return true;
+                   if(dfs(i,j,board,word,0))
+                    {
+                        return true;
+                    } 
                 }
+                
             }
         }
         return false;
