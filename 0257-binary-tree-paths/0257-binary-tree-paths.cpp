@@ -11,8 +11,8 @@
  */
 class Solution {
 public:
-    vector<string>v;
     
+    vector<string>v;
     void solve(TreeNode* root, string temp)
     {
         if(root == NULL)
@@ -25,14 +25,16 @@ public:
             v.push_back(temp);
             return;
         }
-        solve(root->left,temp+to_string(root->val)+'-'+'>');
-        solve(root->right,temp+to_string(root->val)+'-'+'>');
+        solve(root->left, temp + to_string(root->val) + "->" );
+        solve(root->right, temp + to_string(root->val) + "->" );
+        
     }
     
     vector<string> binaryTreePaths(TreeNode* root) {
-     
+        
         string temp = "";
         solve(root,temp);
         return v;
+        
     }
 };
