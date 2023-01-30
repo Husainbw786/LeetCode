@@ -1,22 +1,3 @@
-return solve(n-1,nums);
-}
-};
-​
-**************************************************************************
-Top Down Approach / Memoisation.
-Now we will solve this probelm with the help of memoisation
-use a dp vector to store values
-​
-class Solution {
-public:
-int solve(int idx, vector<int>&nums, vector<int>&dp)
-{
-if(idx == 0)
-{
-return nums[idx];
-}
-if(idx < 0)
-{
 return 0;
 }
 if(dp[idx] != -1)
@@ -37,6 +18,26 @@ return solve(n-1,nums,dp);
 ********************** ********************* *********************
 Buttom's up approach / Tabulation Approach.
 ​
+class Solution {
+public:
+int rob(vector<int>& nums) {
+int n = nums.size();
+vector<int>dp(n);
+int i;
+dp[0] = nums[0];
+for(i=1;i<n;i++)
+{
+int take = nums[i];
+if(i > 1)
+{
+take += dp[i-2];
+}
+int not_take = 0 + dp[i-1];
+dp[i] = max(take,not_take);
+}
+return dp[n-1];
+}
+};
 ​
 ​
 ​
