@@ -9,6 +9,7 @@ public:
             for(int i=3;i>=0;i--)
             {
                 dp[i] += dp[i+1];
+             //   cout << dp[i] << " ";
             }
         }
     
