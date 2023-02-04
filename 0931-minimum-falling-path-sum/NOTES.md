@@ -1,3 +1,5 @@
+return 1e9;
+}
 if(i==0)
 {
 return matrix[0][j];
@@ -25,6 +27,13 @@ return mini;
 };
 *************************************************************************************
 ​
+**Buttom's Up(Tabulation)
 ​
-​
-​
+class Solution {
+public:
+int minFallingPathSum(vector<vector<int>>& matrix) {
+int n = matrix.size();
+int m = matrix[0].size();
+int i,j;
+int dp[n][m];
+for(j=0;j<m;j++)
