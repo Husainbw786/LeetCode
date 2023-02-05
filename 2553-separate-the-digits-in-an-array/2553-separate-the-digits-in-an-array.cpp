@@ -2,25 +2,22 @@ class Solution {
 public:
     vector<int> separateDigits(vector<int>& nums) {
         
+        string ans = "";
         int n = nums.size();
         int i;
-        vector<int>ans;
         for(i=0;i<n;i++)
         {
-            vector<int>temp;
-            int x = nums[i];
-            while(x > 0)
-            {
-                int rem = x %10;
-                temp.push_back(rem);
-                x = x/10;
-            }
-            reverse(temp.begin(),temp.end());
-            for(int j=0;j<temp.size();j++)
-            {
-                ans.push_back(temp[j]);
-            }
+            ans += to_string(nums[i]);
         }
-        return ans;
+        vector<int>v;
+        string x = "";
+        for(i=0;i<ans.size();i++)
+        {
+            x += ans[i];
+            int y = stoi(x);
+            v.push_back(y);
+            x.pop_back();
+        }
+        return v;
     }
 };
