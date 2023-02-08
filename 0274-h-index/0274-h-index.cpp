@@ -1,7 +1,7 @@
 class Solution {
 public:
     int hIndex(vector<int>& citations) {
-        
+            
        
         sort(citations.begin(),citations.end());
         int i;
@@ -17,9 +17,9 @@ public:
             }
             else
             {
-                while(maxi < n-i)
+                if(maxi < n-i)
                 {
-                    maxi++;
+                    maxi = n-i;
                 }
                 break;
             }
