@@ -21,6 +21,7 @@ public:
             temp += ')';
             solve(open,close+1,n,ans);
             temp.pop_back();
+
             
         }
     }
@@ -32,3 +33,6 @@ public:
         return ans;
     }
 };
+
+
+*********
