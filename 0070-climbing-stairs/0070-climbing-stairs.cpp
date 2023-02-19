@@ -1,7 +1,9 @@
+
 class Solution {
 public:
     int climbStairs(int n) {
         
+
         int climb = 1;
         int a = 1;
         int b = 1;
@@ -12,5 +14,6 @@ public:
             b = climb;
         }
         return climb;
+
     }
 };
