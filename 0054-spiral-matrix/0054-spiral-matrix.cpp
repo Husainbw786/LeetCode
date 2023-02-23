@@ -17,9 +17,9 @@ public:
                 rst.push_back(matrix[StartRow][i]);
                 i++;
             }
-            StartRow++;
-            
+            StartRow++;            
             i = StartRow;
+            
             while(i <= EndRow && StartCol <= EndCol)
             {
                 rst.push_back(matrix[i][EndCol]);
