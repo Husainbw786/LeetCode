@@ -15,7 +15,7 @@ public:
         for(i=k;i<n;i++)
         {
             pq.push({nums[i],i});
-            while(!(pq.top().second > i-k))
+            while(pq.top().second <= i-k)
             {
                 pq.pop();
             }
