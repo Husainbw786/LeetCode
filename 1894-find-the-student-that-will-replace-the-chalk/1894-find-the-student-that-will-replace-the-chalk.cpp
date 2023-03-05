@@ -17,13 +17,7 @@ public:
                     return i;
                 }
             }
-        while(k > 0)
-        {
-            if(k - sum >= 0)
-            {
-                k = k - sum;
-                continue;
-            }
+             k = k %sum;
             for(i=0;i<n;i++)
             {
                 if(k-chalk[i] >= 0)
@@ -35,7 +29,6 @@ public:
                     return i;
                 }
             }
-        }
         if(i == n)
         {
             return 0;
