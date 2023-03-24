@@ -25,7 +25,7 @@ public:
             while(size--)
             {
                 TreeNode* temp = q.front().first;
-                int x = q.front().second - start;
+                int x = q.front().second;
                 q.pop();
                 if(temp->left)
                 {
