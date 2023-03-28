@@ -12,7 +12,7 @@ class Solution {
 public:
     ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
        
-        ListNode* head = list1;;
+        ListNode* head = list1;
         ListNode* headClone;
         
         if(list1 == NULL)
