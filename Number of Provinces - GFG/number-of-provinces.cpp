@@ -9,7 +9,7 @@ using namespace std;
 class Solution {
   public:
   
-    void dfs(int x,vector<vector<int>>&adjls,vector<int>&vis)
+    void dfs(int x,vector<int>adjls[],vector<int>&vis)
     {
         vis[x] = 1;
         for(auto it : adjls[x])
@@ -23,7 +23,7 @@ class Solution {
   
     int numProvinces(vector<vector<int>> adj, int V) {
         // code here
-        vector<vector<int>>adjls(V);
+        vector<int>adjls[V];
         vector<int>vis(V,0);
         int i,j;
         for(i=0;i<adj.size();i++)
