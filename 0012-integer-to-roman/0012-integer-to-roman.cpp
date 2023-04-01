@@ -4,6 +4,7 @@ public:
         
         string s = "";
         int i;
+        
         while(num >= 1000)
         {
             num = num - 1000;
