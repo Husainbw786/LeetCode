@@ -5,21 +5,24 @@ public:
         unordered_map<int,int>mp;
         int n = nums.size();
         int i;
+        for(i=0;i<n;i++)
+        {
+            mp[nums[i]]++;
+        }
         vector<vector<int>>ans;
-        int count = 1;
-        while(true)
+        int count = n;
+        while(count--)
         {
             vector<int>temp;
-            unordered_map<int,int>mp;
-            for(i=0;i<n;i++)
+            for(auto x : mp)
             {
-                mp[nums[i]]++;
-                if(mp[nums[i]] == count)
+                if(x.second > 0)
                 {
-                    temp.push_back(nums[i]);
+                    temp.push_back(x.first);
+                    mp[x.first]--;
                 }
             }
-            count++;
+
             if(temp.size() == 0)
             {
                 break;
