@@ -33,10 +33,16 @@ public:
                 st.push(temp) ;        
             }        
         }
+        stack<string>t;
         while(!st.empty())
         {
-            res = "/"+st.top() +res ;
+            t.push(st.top());
             st.pop();
+        }
+        while(!t.empty())
+        {
+            res += "/"+ t.top();
+            t.pop();
         }
         if(res.size()==0) return  "/";
 
