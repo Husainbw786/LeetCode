@@ -11,12 +11,25 @@ public:
         for(i=0;i<n;i++)
         {
             int count = 0;
-            for(j=0;j<m;j++)
+            j = 0;
+            int k = m-1;
+            while(j <= k)
             {
+                if(j == k && mat[i][j] == 1)
+                {
+                    count++;
+                    break;
+                }
                 if(mat[i][j] == 1)
                 {
                     count++;
                 }
+                if(mat[i][k] == 1)
+                {
+                    count++;
+                }
+                j++;
+                k--;
             }
             if(count > maxi)
             {
