@@ -12,29 +12,22 @@
 class Solution {
 public:
     int maxi = 0;
-    void solve(TreeNode* root,bool goleft, int currlength)
+    void solve(TreeNode* root,int direction, int currlength)
     {
         if(root == NULL)
         {
             return ;
         }
         maxi = max(maxi,currlength);
-        if(goleft)
-        {
-            solve(root->left,false,currlength+1);
-            solve(root->right,true,1);
-        }
-        else
-        {
-            solve(root->right,true,currlength+1);
-            solve(root->left,false,1);
-        }
+        solve(root->left,1,direction?1:currlength+1);
+        solve(root->right,0,direction?currlength+1:1);
+        
     }
     
     int longestZigZag(TreeNode* root) 
     {
-        solve(root,true,0);
-        solve(root,false,0);
+        solve(root,0,0);
+        solve(root,1,0);
         return maxi;
     }
 };
