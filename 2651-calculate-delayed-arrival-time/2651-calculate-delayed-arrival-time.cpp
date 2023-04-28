@@ -6,7 +6,7 @@ public:
         {
             return arrivalTime + delayedTime;
         }
-        int x = (arrivalTime + delayedTime) % 24 ;
+        int x = (arrivalTime + delayedTime) % 24;
         return x;
     }
 };
