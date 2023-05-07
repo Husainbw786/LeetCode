@@ -5,12 +5,19 @@
 var createCounter = function(init) {
     
     let x = init;
-    
-    return {
-        increment:()=>++x,
-        decrement:()=>--x,
-        reset:()=> x = init
+    function increment()
+    {
+        return ++x;
     }
+    function decrement()
+    {
+        return --x;
+    }
+    function reset()
+    {
+        return x = init;
+    }
+    return {increment,decrement,reset};
 
     
 };
