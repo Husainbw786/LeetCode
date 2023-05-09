@@ -5,7 +5,7 @@
  */
 var filter = function(arr, fn) {
     
-    let a = [];
+    const a = [];
     
     for(let i=0;i<arr.length;i++)
         {
