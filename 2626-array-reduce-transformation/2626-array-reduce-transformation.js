@@ -11,6 +11,7 @@ var reduce = function(nums, fn, init) {
     {
        x = fn(x,nums[i]);
     }
+    
     return x;
     
 };
