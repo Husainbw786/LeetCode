@@ -3,31 +3,23 @@ public:
     bool carPooling(vector<vector<int>>& trips, int capacity) {
         
         int n = trips.size();
+        vector<int>v(1001,0);
         int i;
-        int maxi = 0;
         for(i=0;i<n;i++)
         {
-            maxi = max(maxi,trips[i][2]);
+            v[trips[i][1]] += trips[i][0];
+            v[trips[i][2]] -= trips[i][0];
         }
-        
-        vector<int>v(maxi+1,0);
-        
-        for(i=0;i<n;i++)
+        int count = 0; 
+        for(i=0;i<1001;i++)
         {
-            int start = trips[i][1];
-            int end = trips[i][2];
-            for(int j=start;j<end;j++)
+            count += v[i];
+            if(count > capacity)
             {
-                v[j] += trips[i][0];
-                if(v[j] > capacity)
-                {
-                    return false;
-                }
+                return false;
             }
         }
         
-    return true;
-        
-        
+        return true;
     }
 };
