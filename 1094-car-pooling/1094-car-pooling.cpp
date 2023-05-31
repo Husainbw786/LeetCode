@@ -10,7 +10,7 @@ public:
             maxi = max(maxi,trips[i][2]);
         }
         
-        vector<int>v(maxi,0);
+        vector<int>v(maxi+1,0);
         
         for(i=0;i<n;i++)
         {
@@ -27,6 +27,7 @@ public:
         }
         
     return true;
-            
+        
+        
     }
 };
