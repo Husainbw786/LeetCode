@@ -7,7 +7,7 @@ public:
         {
             return;
         }
-        if(grid[i][j] == 2 && count == empty)
+        if(grid[i][j] == 2 && count-1 == empty)
         {
             result++;
             return;
@@ -33,7 +33,7 @@ public:
         int count = 0;
         int start = 0;
         int end = 0;
-        int zero_count = 1;
+        int zero_count = 0;
         for(i=0;i<n;i++)
         {
             for(j=0;j<m;j++)
