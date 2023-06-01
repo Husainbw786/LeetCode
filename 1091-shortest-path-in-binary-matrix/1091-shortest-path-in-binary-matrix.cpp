@@ -22,8 +22,6 @@ public:
         }
         
         queue<pair<pair<int,int>,int>>q;
-        int delrow[] = {-1,-1,0,1,1,1,0,-1};
-        int delcol[] = {0,-1,-1,-1,0,1,1,1};
         dis[0][0] = 1;
         q.push({{0,0},dis[0][0]});
         while(!q.empty())
@@ -32,20 +30,80 @@ public:
             int j = q.front().first.second;
             int d = q.front().second;
             q.pop();
-            for(int k=0;k<8;k++)
+            
+            if(check(i+1,j,grid))
             {
-                int row = i + delrow[k];
-                int col = j + delcol[k];
-                if(check(row,col,grid))
+                if(dis[i+1][j] > d+1)
                 {
-                   if(dis[row][col] > 1+d)
-                   {
-                       dis[row][col] = 1+d;
-                       q.push({{row,col},dis[row][col]});
-                   }
-                   
+                    dis[i+1][j] = d+1; 
+                    q.push({{i+1,j},dis[i+1][j]});
                 }
+                
             }
+            if(check(i-1,j,grid))
+            {
+                if(dis[i-1][j] > d+1)
+                {
+                    dis[i-1][j] = d+1; 
+                    q.push({{i-1,j},dis[i-1][j]});
+                }
+                
+            }
+            if(check(i,j+1,grid))
+            {
+                if(dis[i][j+1] > d+1)
+                {
+                    dis[i][j+1] = d+1; 
+                    q.push({{i,j+1},dis[i][j+1]});
+                }
+                
+            }
+            if(check(i,j-1,grid))
+            {
+                if(dis[i][j-1] > d+1)
+                {
+                    dis[i][j-1] = d+1; 
+                    q.push({{i,j-1},dis[i][j-1]});
+                }
+                
+            }
+            if(check(i+1,j+1,grid))
+            {
+                if(dis[i+1][j+1] > d+1)
+                {
+                    dis[i+1][j+1] = d+1; 
+                    q.push({{i+1,j+1},dis[i+1][j+1]});
+                }
+                
+            }
+            if(check(i+1,j-1,grid))
+            {
+                if(dis[i+1][j-1] > d+1)
+                {
+                    dis[i+1][j-1] = d+1; 
+                    q.push({{i+1,j-1},dis[i+1][j-1]});
+                }
+                
+            }
+            if(check(i-1,j+1,grid))
+            {
+                if(dis[i-1][j+1] > d+1)
+                {
+                    dis[i-1][j+1] = d+1; 
+                    q.push({{i-1,j+1},dis[i-1][j+1]});
+                }
+                
+            }
+            if(check(i-1,j-1,grid))
+            {
+                if(dis[i-1][j-1] > d+1)
+                {
+                    dis[i-1][j-1] = d+1; 
+                    q.push({{i-1,j-1},dis[i-1][j-1]});
+                }
+                
+            }
+            
         }
         
         if(dis[n-1][m-1] == INT_MAX)
