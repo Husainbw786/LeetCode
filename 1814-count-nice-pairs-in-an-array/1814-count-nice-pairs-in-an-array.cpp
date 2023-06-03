@@ -14,7 +14,6 @@ public:
             reverse(temp.begin(),temp.end());
             int rev = stoi(temp);
             long long int curr = x - rev;
-            curr = curr % mod;
             count += mp[curr];
             mp[curr]++;
         }
