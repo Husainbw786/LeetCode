@@ -4,7 +4,7 @@ public:
         
         int n  = nums.size();
         int i;
-        int mod = 1000000000 + 7;
+        int mod = 1000000000+7;
         unordered_map<int,int>mp;
         long long int count = 0;
         for(i=0;i<n;i++)
@@ -13,10 +13,10 @@ public:
             string temp = to_string(x);
             reverse(temp.begin(),temp.end());
             int rev = stoi(temp);
-            long long int j = x - rev;
-            j = j % mod;
-            count += mp[j];
-            mp[x-rev]++;
+            long long int curr = x - rev;
+            curr = curr % mod;
+            count += mp[curr];
+            mp[curr]++;
         }
         return count % mod;
     }
