@@ -32,10 +32,7 @@ public:
                   mp[i]--;
                   if(mp[i] == 0)
                   {
-                      if(pq.top() != i)
-                      {
-                          return false;
-                      }
+                      
                       pq.pop();
                   }
               }
