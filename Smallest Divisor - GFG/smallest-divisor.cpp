@@ -7,29 +7,40 @@ using namespace std;
 // } Driver Code Ends
 // User function Template for C++
 
-class Solution {
-  public:
-  int sumcount(vector<int>& nums, int mid){
-      int sum=0;
-      for(int i=0; i<nums.size(); i++){
-          sum+=nums[i]/mid+((nums[i]%mid)!=0);
-      }
-      return sum;
-  }
-  
-    int smallestDivisor(vector<int>& nums, int k) {
+// User function Template for C++
 
-        int s=1,e=*max_element(nums.begin(), nums.end()), ans=0;
-        while(s<=e){
-            int mid=s+(e-s)/2;
-            if(sumcount(nums, mid)<=k){
-                ans=mid;
-                e=mid-1;
+class Solution {
+public:
+    int sum_count(int mid, vector<int>& nums) {
+        int sum = 0;
+        for (int i = 0; i < nums.size(); i++) {
+            sum += nums[i] / mid + ((nums[i] % mid) != 0);
+        }
+        return sum;
+    }
+
+    int smallestDivisor(vector<int>& nums, int k) {
+        int maxi = INT_MIN;
+        int ans = 0;
+
+        for (int i = 0; i < nums.size(); i++) {
+            maxi = max(maxi, nums[i]);
+        }
+
+        int low = 1;
+        int high = maxi;
+
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+            if (sum_count(mid, nums) <= k) {
+                ans = mid;
+                high = mid - 1;
             }
-            else{
-                s=mid+1;
+            else {
+                low = mid + 1;
             }
         }
+
         return ans;
     }
 };
