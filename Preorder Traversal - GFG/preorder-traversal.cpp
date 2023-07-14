@@ -129,21 +129,23 @@ struct Node
 */
 
 //Function to return a list containing the preorder traversal of the tree.
-void Treversal(Node* root ,vector<int>&v)
+
+void preorder(Node* root, vector<int>&v)
 {
     if(root == NULL)
     {
         return;
     }
     v.push_back(root->data);
-    Treversal(root->left,v);
-    Treversal(root->right,v);
+    preorder(root->left,v);
+    preorder(root->right,v);
 }
+
+
 vector <int> preorder(Node* root)
 {
   // Your code here
   vector<int>v;
-  Treversal(root,v);
+  preorder(root,v);
   return v;
-  
 }
