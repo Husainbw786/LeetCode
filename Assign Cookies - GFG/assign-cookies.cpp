@@ -21,6 +21,10 @@ class Solution {
                 count++;
                 j++;
             }
+            if(j == M)
+            {
+                break;
+            }
         }
         return count;
     }
