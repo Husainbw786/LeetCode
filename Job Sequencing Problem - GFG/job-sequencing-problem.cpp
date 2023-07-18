@@ -36,12 +36,8 @@ class Solution
     { 
         // your code here
         
-        vector<pair<int,int>>v;
+       
         int i;
-        for(i=0;i<n;i++)
-        {
-            v.push_back({arr[i].profit,i});
-        }
         sort(arr,arr+n,comp);
         vector<bool>vis(n,false);
         int pro = 0;
