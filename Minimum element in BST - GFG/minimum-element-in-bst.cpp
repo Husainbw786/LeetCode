@@ -121,7 +121,7 @@ Node* newNode(int val) {
      }
      ans = min(ans,root->data);
      dfs(root->left,ans);
-     dfs(root->right,ans);
+    // dfs(root->right,ans);
  }
 
 int minValue(Node* root) {
