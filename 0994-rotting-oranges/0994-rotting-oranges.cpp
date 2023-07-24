@@ -1,49 +1,64 @@
 class Solution {
 public:
+    
+    bool isValid(int i,int j, vector<vector<int>>&grid)
+    {
+        if(i < 0 || j < 0 || i >= grid.size() || j >= grid[0].size())
+        {
+            return false;
+        }
+        return true;
+    }
+    
     int orangesRotting(vector<vector<int>>& grid) {
-        
+     
         int n = grid.size();
         int m = grid[0].size();
         int i,j;
-        queue<pair<pair<int,int>,int>>q;
-        int time = 0;
-        int maxi = 0;
+        queue<pair<int,int>>q;
+        bool check_rotten = false;
         for(i=0;i<n;i++)
         {
             for(j=0;j<m;j++)
             {
                 if(grid[i][j] == 2)
                 {
-                    q.push({{i,j},0});
+                    q.push({i,j});
+                    check_rotten = true;
                 }
             }
         }
+       
+        int time = 0;
         while(!q.empty())
         {
-            int x = q.front().first.first;
-            int y = q.front().first.second;
-            int time = q.front().second;
-            q.pop();
-            maxi = max(time,maxi);
-            if(x-1 >= 0 && grid[x-1][y] == 1)
+            int size = q.size();
+            time++;
+            while(size--)
             {
-                grid[x-1][y] = 2;
-                q.push({{x-1,y},time+1});
-            }
-            if(x+1 < n && grid[x+1][y] == 1)
-            {
-                grid[x+1][y] = 2;
-                q.push({{x+1,y},time+1});
-            }
-            if(y-1 >= 0 && grid[x][y-1] == 1)
-            {
-                grid[x][y-1] = 2;
-                q.push({{x,y-1},time+1});
-            }
-            if(y+1 < m && grid[x][y+1] == 1)
-            {
-                grid[x][y+1] = 2;
-                q.push({{x,y+1},time+1});
+                int x = q.front().first;
+                int y = q.front().second;
+                q.pop();
+                if(isValid(x+1,y,grid) && grid[x+1][y] == 1)
+                {
+                    q.push({x+1,y});
+                    grid[x+1][y] = 2;
+                }
+                if(isValid(x-1,y,grid) && grid[x-1][y] == 1)
+                {
+                    q.push({x-1,y});
+                    grid[x-1][y] = 2;
+                }
+                if(isValid(x,y+1,grid) && grid[x][y+1] == 1)
+                {
+                    q.push({x,y+1});
+                    grid[x][y+1] = 2;
+                }
+                if(isValid(x,y-1,grid) && grid[x][y-1] == 1)
+                {
+                    q.push({x,y-1});
+                    grid[x][y-1] = 2;
+                }
             }
         }
         for(i=0;i<n;i++)
@@ -56,6 +71,11 @@ public:
                 }
             }
         }
-        return maxi;
+        if(!check_rotten)
+        {
+            return 0;
+        }
+       return time-1; 
+        
     }
 };
