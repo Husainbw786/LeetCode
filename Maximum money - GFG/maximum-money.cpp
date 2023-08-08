@@ -7,17 +7,11 @@ class Solution {
   public:
     int maximizeMoney(int N , int K) {
         // code here
-        int x = 0;
-        if(N % 2 == 0)
+        if( N % 2 == 0)
         {
-            x = N /2;
+            return K*(N/2);
         }
-        else
-        {
-            x = N/2;
-            x++;
-        }
-        return x*K;
+        return K*(N/2) + K;
     }
 };
 
