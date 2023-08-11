@@ -27,9 +27,9 @@ public:
                 }
             }
         }
-        int x = dp[n][m];
-        int ans = n - x;
-        ans += m-x;
-        return ans;
+        int lcs = dp[n][m];
+        int del = n - lcs;
+        int insert = m-lcs;
+        return del+insert;
     }
 };
