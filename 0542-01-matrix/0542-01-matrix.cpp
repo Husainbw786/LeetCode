@@ -1,15 +1,6 @@
 class Solution {
 public:
     
-    bool isValid(int i, int j, vector<vector<int>>mat, vector<vector<int>>&vis)
-    {
-        if(i < 0 || j < 0 || i >= mat.size() || j >= mat[0].size() || vis[i][j] == 1)
-        {
-            return false;
-        }
-        return true;
-    }
-    
     
     vector<vector<int>> updateMatrix(vector<vector<int>>& mat) {
         
