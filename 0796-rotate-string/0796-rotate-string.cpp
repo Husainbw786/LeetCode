@@ -10,13 +10,17 @@ public:
         }
         while(m--)
         {
-            s += s[0];
-            s = s.substr(1);
-            if(goal == s)
+            string x;
+            x += goal[goal.size()-1];
+            x += goal;
+            x.pop_back();
+            if(x == s)
             {
                 return true;
             }
+            goal = x;
         }
         return false;
+        
     }
 };
