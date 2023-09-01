@@ -1,7 +1,7 @@
 class Solution {
 public:
     
-    int solve(int idx, int target, vector<int>coins,vector<vector<int>>&dp)
+    int solve(int idx, int target, vector<int>coins,vector<vector<int>>&dp) 
     {
         if(idx == 0)
         {
@@ -11,7 +11,7 @@ public:
             }
             else
             {
-                return 1e7;
+                return 1e6;
             }
         }
         if(dp[idx][target] != -1)
@@ -19,7 +19,7 @@ public:
             return dp[idx][target];
         }
         int not_take = solve(idx-1,target,coins,dp);
-        int take = INT_MAX;
+        int take = 1e6;
         if(coins[idx] <= target)
         {
             take = 1 + solve(idx,target-coins[idx],coins,dp);
@@ -27,16 +27,18 @@ public:
         return dp[idx][target] = min(take,not_take);
     }
     
+    
     int coinChange(vector<int>& coins, int amount) {
-        
+      
         int n = coins.size();
         vector<vector<int>>dp(n,vector<int>(amount+1,-1));
-        int result = solve(n-1,amount,coins,dp);
-        if(result >= 1e6)
+        int i;
+        int ans = 1e6;
+        ans = min(solve(n-1,amount,coins,dp),ans);
+        if(ans >= 1e6)
         {
             return -1;
         }
-        return result;
-        
+        return ans;
     }
 };
