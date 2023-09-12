@@ -3,19 +3,20 @@ public:
     int jump(vector<int>& nums)
     {
         
-        int curr = 0;
-        int maxi = 0;
-        int jump = 0;
-        int i;
         int n = nums.size();
-        for(i=0;i<n-1;i++)
+        int jump = 0;
+        int max_reach = 0;
+        int curr = 0;
+        
+        for(int i=0;i<n-1;i++)
         {
-            maxi = max(maxi,nums[i] + i);
-            if(curr == i)
-            {
-                curr = maxi;
-                jump++;
-            }
+           max_reach = max(max_reach,nums[i]+i);
+           if(curr == i)
+           {
+               jump++;
+               curr = max_reach;
+           }
+            
         }
         return jump;
         
