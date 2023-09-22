@@ -3,10 +3,7 @@ public:
     int minimumIndex(vector<int>& nums) {
         
         int n = nums.size();
-        if(n == 1)
-        {
-            return -1;
-        }
+        
         int i;
         unordered_map<int,int>mp;
         int maxi = INT_MIN;
