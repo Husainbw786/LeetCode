@@ -7,7 +7,7 @@ class Solution {
   public:
     // Function to detect cycle in an undirected graph.
     
-    bool dfs(int i, int parent, vector<int>adj[], vector<int>&vis)
+    bool dfs(int i, int parent, vector<int>adj[],vector<int>&vis)
     {
         vis[i] = 1;
         for(auto x : adj[i])
@@ -29,12 +29,11 @@ class Solution {
     
     bool isCycle(int V, vector<int> adj[]) {
         // Code here
-        
         int i;
         vector<int>vis(V,0);
         for(i=0;i<V;i++)
         {
-            if(vis[i] == 0)
+            if(!vis[i])
             {
                 if(dfs(i,-1,adj,vis))
                 {
