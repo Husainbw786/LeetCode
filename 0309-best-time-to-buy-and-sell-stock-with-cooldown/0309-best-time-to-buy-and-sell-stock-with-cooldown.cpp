@@ -1,26 +1,28 @@
 class Solution {
 public:
     
-    int solve(int idx, int buy, vector<int>prices,vector<vector<int>>&dp)
+    int solve(int i, int can_buy, vector<int>prices,vector<vector<int>>&dp)
     {
-        if(idx >= prices.size())
+        if(i >= prices.size())
         {
             return 0;
         }
-        if(dp[idx][buy] != -1)
+        if(dp[i][can_buy] != -1)
         {
-            return dp[idx][buy];
+            return dp[i][can_buy];
         }
-        if(buy)
+        int profit = 0;
+        if(can_buy)
         {
-            return dp[idx][buy] =  max(-prices[idx] + solve(idx+1,0,prices,dp),solve(idx+1,1,prices,dp));
+            profit = max(-prices[i] + solve(i+1,0,prices,dp),solve(i+1,1,prices,dp));
         }
         else
         {
-            return dp[idx][buy] = max(prices[idx] + solve(idx+2,1,prices,dp),solve(idx+1,0,prices,dp));
+            profit = max(prices[i] + solve(i+2,1,prices,dp),solve(i+1,0,prices,dp));
         }
+        return dp[i][can_buy] = profit;
+        
     }
-    
     int maxProfit(vector<int>& prices) {
         
         int n = prices.size();
