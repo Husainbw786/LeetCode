@@ -6,36 +6,37 @@ using namespace std;
 class Solution {
   public:
     // Function to return a list containing the DFS traversal of the graph.
-    
-    void dfs(int x,vector<int>adj[],vector<int>&vis, vector<int>&ans)
+    vector<int>ans;
+    void dfs(int i, vector<int>adj[], vector<int>&vis)
     {
-        vis[x] = 1;
-        ans.push_back(x);
-        for(auto it : adj[x])
+        if(vis[i] == 1)
         {
-            if(vis[it] == 0)
-            {
-                dfs(it,adj,vis,ans);
-            }
+            return;
+        }
+        vis[i] = 1;
+        ans.push_back(i);
+        for(auto x : adj[i])
+        {
+           
+            dfs(x,adj,vis);
         }
     }
     
     vector<int> dfsOfGraph(int V, vector<int> adj[]) {
-        // Code here
-        int i;
-        vector<int>vis(V,0);
-        vector<int>ans;
-        for(i=0;i<V;i++)
+        
+    int i;
+    vector<int>vis(V,0);
+    
+    for(i=0;i<V;i++)
+    {
+        if(!vis[i])
         {
-            if(vis[i] == 0)
-            {
-                dfs(i,adj,vis,ans);
-            }
+            dfs(i,adj,vis);
         }
-        return ans;
+    }
+     return ans;
     }
 };
-
 
 //{ Driver Code Starts.
 int main() {
