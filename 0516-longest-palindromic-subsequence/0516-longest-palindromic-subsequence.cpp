@@ -2,14 +2,15 @@ class Solution {
 public:
     int longestPalindromeSubseq(string s1) {
         
-        string s2 = s1;
         int n = s1.size();
+        int m = n;
+        string s2 = s1;
         reverse(s2.begin(),s2.end());
-        int dp[n+1][n+1];
         int i,j;
+        int dp[n+1][m+1];
         for(i=0;i<=n;i++)
         {
-            for(j=0;j<=n;j++)
+            for(j=0;j<=m;j++)
             {
                 if(i == 0 || j == 0)
                 {
@@ -28,6 +29,6 @@ public:
                 }
             }
         }
-        return dp[n][n];
+        return dp[n][m];
     }
 };
