@@ -14,12 +14,12 @@ class Solution
         vector<int>dis(V,INT_MAX);
         int i;
         priority_queue< pair<int,int>,vector<pair<int,int>>, greater<pair<int,int>> >pq;
-        pq.push({S,0});
+        pq.push({0,S});
         dis[S] = 0;
         while(!pq.empty())
         {
-            int node = pq.top().first;
-            int d = pq.top().second;
+            int d = pq.top().first;
+            int node = pq.top().second;
             pq.pop();
             for(auto x : adj[node])
             {
@@ -28,7 +28,7 @@ class Solution
                 if(wt + d < dis[next])
                 {
                     dis[next] = wt+d;
-                    pq.push({next,wt+d});
+                    pq.push({wt+d,next});
                 }
             }
         }
