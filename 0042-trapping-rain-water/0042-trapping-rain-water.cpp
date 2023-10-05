@@ -1,27 +1,28 @@
 class Solution {
 public:
-    int trap(vector<int>& heights) {
+    int trap(vector<int>& height) {
         
-        int n = heights.size();
-        int i;
-        vector<int>pre,suf;
+        int n = height.size();
+        vector<int>pre(n,0);
+        vector<int>suf(n,0);
         int maxi = 0;
-        for(i=0;i<n;i++)
+        int i;
+        for(int i=0;i<n;i++)
         {
-            maxi = max(maxi,heights[i]);
-            pre.push_back(maxi);
+            maxi = max(height[i],maxi);
+            pre[i] = maxi;
         }
         maxi = 0;
         for(i=n-1;i>=0;i--)
         {
-            maxi = max(maxi,heights[i]);
-            suf.push_back(maxi);
+            maxi = max(height[i],maxi);
+            suf[i] = maxi;
         }
-        reverse(suf.begin(),suf.end());
         int ans = 0;
+      //  reverse(suf.begin(),suf.end());
         for(i=0;i<n;i++)
         {
-            ans += min(pre[i],suf[i]) - heights[i];
+            ans += min(suf[i],pre[i]) - height[i];
         }
         return ans;
         
