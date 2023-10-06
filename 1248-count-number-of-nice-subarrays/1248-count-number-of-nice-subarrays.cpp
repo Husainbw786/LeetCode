@@ -3,25 +3,25 @@ public:
     int numberOfSubarrays(vector<int>& nums, int k) {
         
         int n = nums.size();
-        int i;
+        int odd = 0;
         unordered_map<int,int>mp;
-        int count = 0;
+        int i;
         int ans = 0;
         for(i=0;i<n;i++)
         {
             if(nums[i] % 2 != 0)
             {
-                count++;
+                odd++;
             }
-            if(count == k)
+            if(odd == k)
             {
                 ans++;
             }
-            if(mp.find(count - k) != mp.end())
+            if(mp.find(odd-k) != mp.end())
             {
-                ans += mp[count-k];
+                ans += mp[odd-k];
             }
-            mp[count]++;
+            mp[odd]++;
         }
         return ans;
     }
