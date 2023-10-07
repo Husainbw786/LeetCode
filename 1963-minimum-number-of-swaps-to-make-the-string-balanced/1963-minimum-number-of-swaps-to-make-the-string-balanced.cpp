@@ -18,6 +18,18 @@ public:
                 }
             }
         }
+        if(st.size() % 2 == 0)
+        {
+            return st.size()/2;
+        }
         return (st.size() + 1)/2;
     }
 };
+
+
+//] ] ] ] [ [ [ [ [ 
+    
+    
+    
+    
+    
