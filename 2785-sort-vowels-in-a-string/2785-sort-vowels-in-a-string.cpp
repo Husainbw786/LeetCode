@@ -22,7 +22,7 @@ public:
                 vowel2 += s[i];
             }
         }
-         sort(vowel2.begin(),vowel2.end());
+        sort(vowel2.begin(),vowel2.end());
         vowel1 += vowel2;
         int j = 0;
         for(i=0;i<n;i++)
