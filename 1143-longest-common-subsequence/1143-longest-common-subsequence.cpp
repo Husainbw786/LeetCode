@@ -4,7 +4,9 @@ public:
         
         int n = text1.size();
         int m = text2.size();
-        int i,j;
+
+        int i;
+        int j;
         int dp[n+1][m+1];
         for(i=0;i<=n;i++)
         {
@@ -27,6 +29,8 @@ public:
                 }
             }
         }
+
         return dp[n][m];
+
     }
 };
