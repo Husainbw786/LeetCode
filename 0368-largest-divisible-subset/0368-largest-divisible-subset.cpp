@@ -30,6 +30,7 @@ public:
             
         }
         vector<int>ans;
+        
         while(hash[last_idx] != last_idx)
         {
             ans.push_back(nums[last_idx]);
