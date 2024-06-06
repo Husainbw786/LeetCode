@@ -31,9 +31,8 @@ public:
                   }
                   mp[i]--;
                   if(mp[i] == 0)
-                  {
-                      
-                      pq.pop();
+                  { 
+                     pq.pop();
                   }
               }
           }
